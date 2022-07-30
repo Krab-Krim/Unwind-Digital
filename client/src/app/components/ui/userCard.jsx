@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { getCurrentUserData } from "../../store/users";
 import { useHistory } from "react-router-dom";
-import {Button, Image} from "react-bootstrap";
+import {Image} from "react-bootstrap";
 const UserCard = ({ user }) => {
     const history = useHistory();
     const currentUser = useSelector(getCurrentUserData());
@@ -16,12 +16,13 @@ const UserCard = ({ user }) => {
         <div className="card mb-3">
             <div className="card-body">
                 {currentUser._id === user._id && (
-                    <Button
-                        className="position-absolute top-0 end-0 btn btn-light btn-sm"
+                    <button
+                        className="position-absolute top-0 end-0 btn btn-danger btn-sm"
                         onClick={handleClick}
                     >
-                        <i className="bi bi-gear"></i>
-                    </Button>
+                        Изменить данные
+                        <i className="bi bi-1-circle"></i>
+                    </button>
                 )}
 
                 <div className="d-flex flex-column align-items-center text-center position-relative">
