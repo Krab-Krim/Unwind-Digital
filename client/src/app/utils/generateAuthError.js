@@ -5,6 +5,6 @@ export function generetaAuthError(message) {
         case "EMAIL_EXISTS":
             return "Пользователь с таким Email уже существует";
         default:
-            return "Слишком много попыток входа. Попробуйте позднее";
+            return "Введите корректный email или пароль";
     }
 }

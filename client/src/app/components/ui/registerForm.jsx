@@ -4,7 +4,6 @@ import TextField from "../common/form/textField";
 import RadioField from "../common/form/radio.Field";
 import CheckBoxField from "../common/form/checkBoxField";
 import { getAuthErrors, signUp } from "../../store/users";
-import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 const RegisterForm = () => {
@@ -117,7 +116,10 @@ const RegisterForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form
+            className="login-form-margin"
+            onSubmit={handleSubmit}
+        >
             <TextField
                 label="Электронная почта"
                 name="email"
@@ -152,8 +154,7 @@ const RegisterForm = () => {
             <RadioField
                 options={[
                     { name: "Мужчина", value: "male" },
-                    { name: "Женщина", value: "female" },
-                    { name: "Что-то другое", value: "other" }
+                    { name: "Женщина", value: "female" }
                 ]}
                 value={data.sex}
                 name="sex"
@@ -168,15 +169,14 @@ const RegisterForm = () => {
             >
                 Согласен с условиями <a>Правил пользования торговой площадкой и правилами возврата</a>
             </CheckBoxField>
-            {loginError && <p className="text-danger">{loginError}</p>}
-            <Button
-                variant="success"
-                className=" w-100 mx-auto mb-3"
+            {loginError && <p className="login-form-error">{loginError}</p>}
+            <button
                 type="submit"
                 disabled={!isValid}
+                className="login-form-button"
             >
                 Зарегистрироваться
-            </Button>
+            </button>
         </form>
     );
 };

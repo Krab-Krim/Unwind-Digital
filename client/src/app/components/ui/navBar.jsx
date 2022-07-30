@@ -3,17 +3,20 @@ import { Link } from "react-router-dom";
 import NavProfile from "./navProfile";
 import { useSelector } from "react-redux";
 import { getIsLoggedIn } from "../../store/users";
+import logo from "../../../statics/logo 3.png";
 
 const NavBar = () => {
     const isLoggedIn = useSelector(getIsLoggedIn());
     return (
-        <nav className="navbar bg-light mb-3">
-            <div className="container-fluid">
-                <ul className="nav">
+        <nav className="nav">
+            <div className="nav-container">
+                <div className="nav-logo">
+                    <img src={logo}/>
+                </div>
+                <ul>
                     {isLoggedIn && (
-                        <li className="nav-item">
+                        <li>
                             <Link
-                                className="nav-link "
                                 aria-current="page"
                                 to="/users"
                             >
@@ -22,7 +25,7 @@ const NavBar = () => {
                         </li>
                     )}
                 </ul>
-                <div className="d-flex">
+                <div>
                     {isLoggedIn ? (
                         <NavProfile />
                     ) : (

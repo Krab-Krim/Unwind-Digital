@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {Container, Image} from "react-bootstrap";
-import Table from "react-bootstrap/Table";
 import getRandomNumber from "../../../utils/getRandomNumber";
 
 const UsersListPage = () => {
@@ -26,8 +24,8 @@ const UsersListPage = () => {
     const userPosts = data.slice(pageSize)
 
     return (
-        <Container>
-            <Table striped bordered hover>
+        <div>
+            <table>
                 <thead>
                 <tr>
                     <th>User name</th>
@@ -45,7 +43,7 @@ const UsersListPage = () => {
                             <td>{result.title}</td>
                             <td>{result.body}</td>
                             <td>
-                                <Image
+                                <img
                                     src={photos.url}
                                     style={{ width: "150px", height: "150px" }}
                                 />
@@ -54,8 +52,8 @@ const UsersListPage = () => {
                         </tbody>
                     )
                 )}
-            </Table>
-        </Container>
+            </table>
+        </div>
     );
 };
 

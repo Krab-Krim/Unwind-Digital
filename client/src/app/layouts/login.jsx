@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useParams } from "react-router";
+import React, {useState} from "react";
+import {useParams} from "react-router";
 import LoginForm from "../components/ui/loginForm";
 import RegisterForm from "../components/ui/registerForm";
 
 const Login = () => {
-    const { type } = useParams();
+    const {type} = useParams();
     const [formType, setFormType] = useState(
         type === "register" ? type : "login"
     );
@@ -15,41 +15,44 @@ const Login = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <div className="row">
-                <div className="col-md-6 offset-md-3 shadow p-4 formBackground">
+        <div className="container login">
+            <div className="login-row">
+                <div className="login-form">
                     {formType === "register" ? (
-                        <>
-                            <h3 className="mb-4 text-center">Регистрация</h3>
-                            <RegisterForm />
-                            <p>
-                                Уже есть аккаунт?{" "}
-                                <a
-                                    role="button"
-                                    onClick={toggleFormType}
-                                    className="text-danger text-decoration-none"
-                                >
-                                    {" "}
-                                    Вход в личный кабинет
-                                </a>
-                            </p>
-                        </>
+                        <div>
+                            <h1 className="login-text-h1">Регистрация</h1>
+                            <RegisterForm/>
+                            <div className="login-text">
+                                <p>
+                                    Уже есть аккаунт?{" "}
+                                    <a
+                                        role="button"
+                                        onClick={toggleFormType}
+                                        className="text-danger text-decoration-none"
+                                    >
+                                        {" "}
+                                        Вход в личный кабинет
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
                     ) : (
-                        <>
-                            <h3 className="mb-4 text-center">Вход</h3>
-                            <LoginForm />
-                            <p>
-                                У вас нет аккаунта? {" "}
-                                <a
-                                    role="button"
-                                    onClick={toggleFormType}
-                                    className="text-danger text-decoration-none"
-                                >
-                                    {" "}
-                                    Регистрация
-                                </a>
-                            </p>
-                        </>
+                        <div>
+                            <h1 className="login-text-h1">Autorization</h1>
+                            <LoginForm/>
+                            <div className="login-text">
+                                <p>
+                                    У вас нет аккаунта? {" "}
+                                    <a
+                                        role="button"
+                                        onClick={toggleFormType}
+                                    >
+                                        {" "}
+                                        Регистрация
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
                     )}
                 </div>
             </div>

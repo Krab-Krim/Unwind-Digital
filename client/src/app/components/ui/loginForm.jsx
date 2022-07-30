@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuthErrors, login } from "../../store/users";
 import { validator } from "../../utils/validator";
-import { Button } from "react-bootstrap";
 
 const LoginForm = () => {
     const [data, setData] = useState({
@@ -62,7 +61,10 @@ const LoginForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form
+            className="login-form-margin"
+            onSubmit={handleSubmit}
+        >
             <TextField
                 label="Электронная почта"
                 name="email"
@@ -78,15 +80,14 @@ const LoginForm = () => {
                 onChange={handleChange}
                 error={errors.password}
             />
-            {loginError && <p className="text-danger">{loginError}</p>}
-            <Button
+            {loginError && <p className="login-form-error">{loginError}</p>}
+            <button
                 type="submit"
                 disabled={!isValid}
-                className="w-100 mx-auto"
-                variant="success"
+                className="login-form-button"
             >
                 Вход
-            </Button>
+            </button>
         </form>
     );
 };

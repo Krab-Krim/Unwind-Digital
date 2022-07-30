@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { getCurrentUserData } from "../../store/users";
 import { useHistory } from "react-router-dom";
-import {Image} from "react-bootstrap";
+
 const UserCard = ({ user }) => {
     const history = useHistory();
     const currentUser = useSelector(getCurrentUserData());
@@ -26,7 +26,7 @@ const UserCard = ({ user }) => {
                 )}
 
                 <div className="d-flex flex-column align-items-center text-center position-relative">
-                    <Image
+                    <img
                         src={user.image}
                         className="rounded-circle"
                         width="150"
