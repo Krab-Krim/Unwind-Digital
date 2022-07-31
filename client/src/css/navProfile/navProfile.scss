@@ -1,0 +1,25 @@
+.navProfile {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+    &-name {
+      color: #0048ff;
+    }
+  }
+
+  &-link {
+    & a {
+      text-decoration: none;
+      color: white;
+      margin-left: 20px;
+    }
+  }
+}
