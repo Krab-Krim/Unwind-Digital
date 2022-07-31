@@ -67,10 +67,10 @@ const EditUserPage = () => {
     const isValid = Object.keys(errors).length === 0;
 
     return (
-        <div className="container mt-5">
+        <div className="container editUserPage">
             <BackHistoryButton />
-            <div className="row">
-                <div className="col-md-6 offset-md-3 shadow p-4">
+            <div>
+                <div>
                     {!isLoading ? (
                         <form onSubmit={handleSubmit}>
                             <TextField
@@ -89,9 +89,8 @@ const EditUserPage = () => {
                             />
                             <RadioField
                                 options={[
-                                    { name: "Male", value: "male" },
-                                    { name: "Female", value: "female" },
-                                    { name: "Other", value: "other" }
+                                    { name: "Мужчина", value: "male" },
+                                    { name: "Женщина", value: "female" },
                                 ]}
                                 value={data.sex}
                                 name="sex"

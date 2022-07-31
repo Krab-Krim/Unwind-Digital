@@ -13,11 +13,10 @@ const UserCard = ({ user }) => {
     };
 
     return (
-        <div className="card mb-3">
-            <div className="card-body">
+        <div className="userCard">
+            <div>
                 {currentUser._id === user._id && (
                     <button
-                        className="position-absolute top-0 end-0 btn btn-danger btn-sm"
                         onClick={handleClick}
                     >
                         Изменить данные
@@ -25,11 +24,11 @@ const UserCard = ({ user }) => {
                     </button>
                 )}
 
-                <div className="d-flex flex-column align-items-center text-center position-relative">
+                <div>
                     <img
                         src={user.image}
-                        className="rounded-circle"
                         width="150"
+                        alt="img"
                     />
                     <div className="mt-4">
                         <h4>{user.name}</h4>

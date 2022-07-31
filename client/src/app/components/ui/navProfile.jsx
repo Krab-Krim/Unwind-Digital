@@ -1,34 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getCurrentUserData } from "../../store/users";
 const NavProfile = () => {
     const currentUser = useSelector(getCurrentUserData());
-    const [isOpen, setOpen] = useState(false);
-    const toggleMenu = () => {
-        setOpen((prevState) => !prevState);
-    };
 
     if (!currentUser) return "loading";
     return (
-        <div className="dropdown" onClick={toggleMenu}>
-            <div className="btn dropdown-toggle d-flex align-items-center">
-                <div className="me-2">{currentUser.name}</div>
-                <img
-                    src={currentUser.image}
-                    alt=""
-                    height="40"
-                    className="img-responsive rounded-circle"
-                />
+        <div className="navProfile">
+            <div className="navProfile-info">
+                <div className="navProfile-info-name">{currentUser.name}</div>
+                <div className="navProfile-info-img">
+                    <img
+                        src={currentUser.image}
+                        alt=""
+                        height="40"
+                    />
+                </div>
             </div>
-            <div className={"w-100 dropdown-menu" + (isOpen ? " show" : "")}>
+            <div className="navProfile-link">
                 <Link
                     to={`/users/${currentUser._id}`}
-                    className="dropdown-item"
                 >
                     Profile
                 </Link>
-                <Link to="/logout" className="dropdown-item">
+                <Link
+                    to="/logout"
+                >
                     Log Out
                 </Link>
             </div>

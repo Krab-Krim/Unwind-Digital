@@ -1,0 +1,11 @@
+.userPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+.userPage-card {
+  margin: 0 10%;
+}
+
+/*# sourceMappingURL=userPage.css.map */

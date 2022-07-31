@@ -28,7 +28,6 @@ const Login = () => {
                                     <a
                                         role="button"
                                         onClick={toggleFormType}
-                                        className="text-danger text-decoration-none"
                                     >
                                         {" "}
                                         Вход в личный кабинет
